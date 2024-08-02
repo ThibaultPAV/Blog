@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on NeuroFab</title>
-    <link>https://thibaultpav.github.io/Blog/en/posts/</link>
-    <description>Recent content in Posts on NeuroFab</description>
+    <title>Article on NeuroFab</title>
+    <link>https://thibaultpav.github.io/Blog/fr/posts/</link>
+    <description>Recent content in Article on NeuroFab</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thibaultpav.github.io/Blog/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>fr</language>
+    <lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thibaultpav.github.io/Blog/fr/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Key Concepts of Reinforcement Learning: What You Need to Know</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/introduction_rl/</link>
+      <title>Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir</title>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/</link>
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/introduction_rl/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/</guid>
       
-      <description>🌍 Imagine a world where machines learn to make decisions, adjusting their strategies over time to achieve specific goals. This world is no longer a mere vision of the future, but a reality, thanks in large part to Reinforcement Learning (RL).
-If you&amp;rsquo;re curious about how this technology works, you&amp;rsquo;re in the right place. In this article, I will explain in a simple and clear manner the essential concepts of RL, an artificial intelligence technique that allows machines to learn independently, without supervision.</description>
+      <description>🌍 Imaginez un monde où les machines apprennent à prendre des décisions, ajustant leurs stratégies au fil du temps pour atteindre des objectifs précis. Ce monde n&amp;rsquo;est plus une simple vision du futur, mais bien une réalité notamment grâce au Reinforcement Learning (RL).
+Si vous êtes curieux de découvrir comment cette technologie fonctionne, vous êtes au bon endroit. Dans cet article, je vais vous expliquer de manière simple et claire les notions essentielles du RL, une technique d&amp;rsquo;intelligence artificielle qui permet aux machines d&amp;rsquo;apprendre par elles-mêmes, sans supervision.</description>
       
     </item>
     
     <item>
       <title>Q-learning</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/q_learning/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/q_learning/</link>
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/q_learning/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/q_learning/</guid>
       
       <description>blablabla</description>
       
@@ -32,10 +32,10 @@ If you&amp;rsquo;re curious about how this technology works, you&amp;rsquo;re in
     
     <item>
       <title>Table of content</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/table-of-content/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/table-of-content/</link>
       <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/table-of-content/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/table-of-content/</guid>
       
       <description>Table of content This theme supports displaying table of content (ToC) in blog posts.
 Parameters You can manage a ToC with two parameters:
@@ -47,10 +47,10 @@ Enable table of content on all posts To enable ToC on all posts (globally) set p
     
     <item>
       <title>Math Typesetting - use Mathematical notation in blog posts</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/math-typesetting/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/math-typesetting/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/math-typesetting/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/math-typesetting/</guid>
       
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using
 &lt;a href=&#34;https://github.com/hugo-sid/hugo-blog-awesome/blob/main/layouts/partials/helpers/katex.html&#34;&gt;third party JavaScript libraries&lt;/a&gt;.&lt;/p&gt;</description>
@@ -59,10 +59,10 @@ Enable table of content on all posts To enable ToC on all posts (globally) set p
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/markdown-syntax/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/markdown-syntax/</link>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/markdown-syntax/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/markdown-syntax/</guid>
       
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
       
@@ -70,10 +70,10 @@ Enable table of content on all posts To enable ToC on all posts (globally) set p
     
     <item>
       <title>Rich Content</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/rich-content/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/rich-content/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/rich-content/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/rich-content/</guid>
       
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
       
@@ -81,23 +81,12 @@ Enable table of content on all posts To enable ToC on all posts (globally) set p
     
     <item>
       <title>Placeholder Text</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/placeholder-text/</link>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/placeholder-text/</link>
       <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://thibaultpav.github.io/Blog/en/posts/placeholder-text/</guid>
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/placeholder-text/</guid>
       
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>https://thibaultpav.github.io/Blog/en/posts/emoji-support/</link>
-      <pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://thibaultpav.github.io/Blog/en/posts/emoji-support/</guid>
-      
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
       
     </item>
     

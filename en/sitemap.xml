@@ -2,176 +2,176 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/Blog/en/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/</loc>
     <lastmod>2024-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/"
+                href="https://thibaultpav.github.io/Blog/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/"
+                href="https://thibaultpav.github.io/Blog/en/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/introduction_rl/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/introduction_rl/</loc>
     <lastmod>2024-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/introduction_rl/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/introduction_rl/"
+                href="https://thibaultpav.github.io/Blog/en/posts/introduction_rl/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/</loc>
     <lastmod>2024-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/"
+                href="https://thibaultpav.github.io/Blog/en/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/q_learning/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/q_learning/</loc>
     <lastmod>2024-08-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/q_learning/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/q_learning/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/q_learning/"
+                href="https://thibaultpav.github.io/Blog/en/posts/q_learning/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/table-of-content/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/table-of-content/</loc>
     <lastmod>2023-05-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/table-of-content/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/table-of-content/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/table-of-content/"
+                href="https://thibaultpav.github.io/Blog/en/posts/table-of-content/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/math-typesetting/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/math-typesetting/</loc>
     <lastmod>2023-04-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/math-typesetting/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/math-typesetting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/math-typesetting/"
+                href="https://thibaultpav.github.io/Blog/en/posts/math-typesetting/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/markdown-syntax/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/markdown-syntax/</loc>
     <lastmod>2023-02-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/markdown-syntax/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/markdown-syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/markdown-syntax/"
+                href="https://thibaultpav.github.io/Blog/en/posts/markdown-syntax/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/rich-content/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/rich-content/</loc>
     <lastmod>2023-02-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/rich-content/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/rich-content/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/rich-content/"
+                href="https://thibaultpav.github.io/Blog/en/posts/rich-content/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/placeholder-text/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/placeholder-text/</loc>
     <lastmod>2023-02-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/posts/placeholder-text/"
+                href="https://thibaultpav.github.io/Blog/fr/posts/placeholder-text/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/posts/placeholder-text/"
+                href="https://thibaultpav.github.io/Blog/en/posts/placeholder-text/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/tags/emoji/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/tags/emoji/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Blog/en/posts/emoji-support/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/posts/emoji-support/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/Blog/en/tags/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/tags/</loc>
     <lastmod>2023-02-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/tags/"
+                href="https://thibaultpav.github.io/Blog/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/tags/"
+                href="https://thibaultpav.github.io/Blog/en/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/pages/about/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/pages/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/pages/about/"
+                href="https://thibaultpav.github.io/Blog/fr/pages/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/pages/about/"
+                href="https://thibaultpav.github.io/Blog/en/pages/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/categories/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/categories/"
+                href="https://thibaultpav.github.io/Blog/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/categories/"
+                href="https://thibaultpav.github.io/Blog/en/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Blog/en/pages/</loc>
+    <loc>https://thibaultpav.github.io/Blog/en/pages/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="http://localhost:1313/Blog/pages/"
+                href="https://thibaultpav.github.io/Blog/fr/pages/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Blog/en/pages/"
+                href="https://thibaultpav.github.io/Blog/en/pages/"
                 />
   </url>
 </urlset>

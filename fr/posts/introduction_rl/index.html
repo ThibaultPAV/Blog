@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="fr"><head><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Q-learning | NeuroFab</title>
-<meta property="og:title" content="Q-learning | NeuroFab" />
-<meta name="twitter:title" content="Q-learning | NeuroFab" />
-<meta itemprop="name" content="Q-learning | NeuroFab" />
-<meta name="application-name" content="Q-learning | NeuroFab" />
+<title itemprop="name">Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir | NeuroFab</title>
+<meta property="og:title" content="Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir | NeuroFab" />
+<meta name="twitter:title" content="Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir | NeuroFab" />
+<meta itemprop="name" content="Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir | NeuroFab" />
+<meta name="application-name" content="Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir | NeuroFab" />
 <meta property="og:site_name" content="NeuroFab" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale">
+<meta itemprop="description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
+<meta property="og:description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
+<meta name="twitter:description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
 
-<meta property="og:locale" content="en" />
-<meta name="language" content="en" />
+<meta property="og:locale" content="fr" />
+<meta name="language" content="fr" />
 
-  <link rel="alternate" hreflang="en" href="https://thibaultpav.github.io/Blog/en/posts/q_learning/" title="English" />
+  <link rel="alternate" hreflang="en" href="https://thibaultpav.github.io/Blog/en/posts/introduction_rl/" title="English" />
 
-  <link rel="alternate" hreflang="fr" href="https://thibaultpav.github.io/Blog/fr/posts/q_learning/" title="Français" />
+  <link rel="alternate" hreflang="fr" href="https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/" title="Français" />
 
 
 
@@ -33,7 +33,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:article:published_time" content=2024-08-01T00:00:00Z />
     <meta property="article:published_time" content=2024-08-01T00:00:00Z />
-    <meta property="og:url" content="https://thibaultpav.github.io/Blog/en/posts/q_learning/" />
+    <meta property="og:url" content="https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/" />
 
     
     <meta property="og:article:author" content="Sidharth R" />
@@ -48,14 +48,14 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Q-learning",
+        "headline": "Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir",
         "author": {
         "@type": "Person",
         "name": ""
         },
         "datePublished": "2024-08-01",
         "description": "",
-        "wordCount":  1 ,
+        "wordCount":  577 ,
         "mainEntityOfPage": "True",
         "dateModified": "2024-08-01",
         "image": {
@@ -74,7 +74,7 @@
 
     
 
-    <link rel="canonical" href="https://thibaultpav.github.io/Blog/en/posts/q_learning/">
+    <link rel="canonical" href="https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/">
     <link href="/Blog/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
     <link href="/Blog/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -108,7 +108,7 @@
 
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
-        <a href="https://thibaultpav.github.io/Blog/en/" class="logo">
+        <a href="https://thibaultpav.github.io/Blog/fr/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
 stroke-linejoin="round" class="feather feather-home">
@@ -129,22 +129,22 @@ stroke-linejoin="round" class="feather feather-home">
                 
                 
                 <li>
-                    <a class="menu-link " href="/Blog/en/">
-                        Home
+                    <a class="menu-link " href="/Blog/fr/">
+                        Accueil
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/Blog/en/posts/">
-                        Posts
+                    <a class="menu-link active" href="/Blog/fr/posts/">
+                        Articles
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/Blog/en/pages/about/">
-                        About
+                    <a class="menu-link " href="/Blog/fr/pages/about/">
+                        À Propos
                     </a>
                     
                 </li>
@@ -164,8 +164,7 @@ stroke-linejoin="round" class="feather feather-home">
                                     
                                         
                                         
-                                            <option id="en" value="https://thibaultpav.github.io/Blog/en/posts/q_learning/" selected>EN
-                                            </option>
+                                            <option id="en" value="https://thibaultpav.github.io/Blog/en/posts/introduction_rl/">EN</option>
                                         
                                     
                                 
@@ -179,7 +178,8 @@ stroke-linejoin="round" class="feather feather-home">
                                     
                                         
                                         
-                                            <option id="fr" value="https://thibaultpav.github.io/Blog/fr/posts/q_learning/">FR</option>
+                                            <option id="fr" value="https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/" selected>FR
+                                            </option>
                                         
                                     
                                 
@@ -205,11 +205,11 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">Q-learning</h1>
+                <h1 class="header-title">Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir</h1>
                 
                 
                 <div class="post-meta">
-                    <time datetime="2024-08-01T00:00:00&#43;00:00" itemprop="datePublished"> Aug 1, 2024 </time>
+                    <time datetime="2024-08-01T00:00:00&#43;00:00" itemprop="datePublished"> 1 août 2024 </time>
                 </div>
                 
             </header>
@@ -217,10 +217,54 @@ stroke-linejoin="round" class="feather feather-home">
     
     <details class="toc" ZgotmplZ>
         <summary><b></b></summary>
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#définition-des-concepts-de-base-du-reinforcement-learning-à-travers-le-jeu-de-dames">Définition des Concepts de Base du Reinforcement Learning à Travers le Jeu de Dames</a></li>
+        <li><a href="#les-méthodes-de-différence-temporelle-td">Les Méthodes de Différence Temporelle (TD)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </details>
             <div class="page-content">
-                <p>blablabla</p>
+                <p><strong>🌍 Imaginez un monde où les machines apprennent à prendre des décisions, ajustant leurs stratégies au fil du temps pour atteindre des objectifs précis. Ce monde n&rsquo;est plus une simple vision du futur, mais bien une réalité notamment grâce au Reinforcement Learning (RL).</strong></p>
+<p>Si vous êtes curieux de découvrir comment cette technologie fonctionne, vous êtes au bon endroit. Dans cet article, je vais vous expliquer de manière simple et claire les notions essentielles du RL, une technique d&rsquo;intelligence artificielle qui permet aux machines d&rsquo;apprendre par elles-mêmes, sans supervision.</p>
+<p>🔍 Nous allons explorer ensemble trois concepts fondamentaux qui sous-tendent la plupart des algorithmes de RL :</p>
+<ul>
+<li>⏳ les méthodes de différence temporelle,</li>
+<li>🎭 les méthodes <em>Actor-Critic</em>,</li>
+<li>🛠️ les méthodes d&rsquo;approximation de politique.</li>
+</ul>
+<p>🎯 Mon objectif est de vous offrir une vision d&rsquo;ensemble de ces approches, sans entrer dans des détails trop techniques. Prêt à découvrir comment le RL fonctionne ?</p>
+<p>Alors, commençons en définissant les concepts fondamentaux 🚀</p>
+<h3 id="définition-des-concepts-de-base-du-reinforcement-learning-à-travers-le-jeu-de-dames">Définition des Concepts de Base du Reinforcement Learning à Travers le Jeu de Dames</h3>
+<p>Avant d&rsquo;explorer les méthodes spécifiques du Reinforcement Learning (RL), définissons d&rsquo;abord les concepts de base. Pour faciliter la compréhension, nous allons utiliser le jeu de dames comme exemple 🎲.</p>
+<ul>
+<li>
+<p><strong>État (State)</strong> : L&rsquo;état correspond à la configuration actuelle du plateau de jeu, incluant la position de chaque pion. Il capture l&rsquo;état du jeu à un moment précis📸.</p>
+</li>
+<li>
+<p><strong>Action</strong> : Une action est une décision que l&rsquo;algorithme prend, comme déplacer un pion ou capturer un pion adverse. Chaque action modifie l&rsquo;état du jeu.</p>
+</li>
+<li>
+<p><strong>Politique (Policy)</strong> : La politique représente la stratégie que l&rsquo;algorithme adopte pour choisir ses actions en fonction de l&rsquo;état actuel du plateau. C’est un ensemble de règles qui guident ses décisions pour maximiser ses chances de victoire 🏆.</p>
+</li>
+<li>
+<p><strong>Récompense (Reward)</strong> : Après chaque action, une récompense est attribuée en fonction du résultat immédiat. Par exemple, capturer un pion adverse génère une récompense positive, tandis qu’un mouvement risqué qui se retourne contre vous peut entraîner une récompense négative. Oui, parfois la vie est dure… même dans le jeu de dames.</p>
+</li>
+<li>
+<p><strong>Valeur (Value)</strong> : La valeur d&rsquo;un état représente l&rsquo;estimation des gains futurs que l&rsquo;algorithme aura en suivant une stratégie donnée. Par exemple, si le bot est en position favorable, cet état aura une valeur élevée, car il promet de meilleures perspectives 💡.</p>
+</li>
+<li>
+<p><strong>Environnement</strong> : L&rsquo;environnement inclut tous les éléments du jeu, comme le plateau, les pions, les règles, et l&rsquo;adversaire. Il évolue avec chaque action du bot, influençant ainsi l&rsquo;état et les récompenses associées.</p>
+</li>
+</ul>
+<p>Ces concepts sont essentiels pour comprendre le fonctionnement du Reinforcement Learning. Passons maintenant à quelque chose d&rsquo;un peu plus technique, mais tout aussi fascinant 😄.</p>
+<h3 id="les-méthodes-de-différence-temporelle-td">Les Méthodes de Différence Temporelle (TD)</h3>
+<p>Les méthodes de différence temporelle (TD) sont un pilier fondamental de l&rsquo;apprentissage par renforcement. Pour les comprendre, restons sur notre exemple du jeu de dames. Imaginez que vous essayez de vous perfectionnez à ce jeu. Au lieu d&rsquo;attendre la fin de la partie pour évaluer vos actions, les méthodes TD vous permettent d&rsquo;ajuster votre stratégie après chaque coup. Pratique, n&rsquo;est-ce pas ?</p>
+<p>Ces méthodes comparent la valeur anticipée d&rsquo;une situation (ou état) avec la valeur réellement observée après une action. La différence entre ces deux valeurs, appelée &ldquo;erreur de différence temporelle&rdquo;, est ensuite utilisée pour mettre à jour les estimations des valeurs des actions futures. Cela permet à l&rsquo;agent d&rsquo;améliorer progressivement sa stratégie et de se rapprocher de la politique optimale, c’est-à-dire la meilleure façon d’agir pour maximiser les récompenses.</p>
 
             </div>
         </article></main>
