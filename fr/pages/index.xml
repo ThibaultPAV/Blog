@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on NeuroFab</title>
+    <link>https://thibaultpav.github.io/Blog/fr/pages/</link>
+    <description>Recent content in Pages on NeuroFab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language><atom:link href="https://thibaultpav.github.io/Blog/fr/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>À propos de moi</title>
+      <link>https://thibaultpav.github.io/Blog/fr/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://thibaultpav.github.io/Blog/fr/pages/about/</guid>
+      
+      <description>&lt;h1 id=&#34;-bienvenue-sur-mon-blog-&#34;&gt;👋 Bienvenue sur mon blog !&lt;/h1&gt;
+&lt;p&gt;Je m&amp;rsquo;appelle Thibault, et si vous êtes ici, c&amp;rsquo;est probablement parce que, comme moi, vous êtes intéréssé par la &lt;strong&gt;data science&lt;/strong&gt; et l&amp;rsquo;informatique. Actuellement en dernière année d&amp;rsquo;école d&amp;rsquo;ingénieurs, je me spécialise en &lt;strong&gt;mathématiques appliquées et modélisation&lt;/strong&gt;, des domaines qui nourrissent ma curiosité et mon envie de comprendre le monde qui nous entoure.&lt;/p&gt;
+&lt;h2 id=&#34;pourquoi-ce-blog-&#34;&gt;Pourquoi ce blog ?&lt;/h2&gt;
+&lt;p&gt;Ce blog est un espace où je partage mes &lt;strong&gt;projets personnels&lt;/strong&gt; en data science et informatique. Mon objectif est de créer un lieu d&amp;rsquo;apprentissage et d&amp;rsquo;échange, où je peux partager ce que j&amp;rsquo;ai appris tout en découvrant de nouvelles idées grâce à vous. Que vous soyez débutant ou expert, j&amp;rsquo;espère que mes expériences vous inspireront et vous fourniront des pistes pour vos propres projets.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

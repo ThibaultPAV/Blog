@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on NeuroFab</title>
+    <link>https://thibaultpav.github.io/Blog/en/pages/</link>
+    <description>Recent content in Pages on NeuroFab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://thibaultpav.github.io/Blog/en/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://thibaultpav.github.io/Blog/en/pages/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://thibaultpav.github.io/Blog/en/pages/about/</guid>
+      
+      <description>&lt;h1 id=&#34;-welcome-to-my-blog&#34;&gt;👋 Welcome to my blog!&lt;/h1&gt;
+&lt;p&gt;My name is Thibault, and if you&amp;rsquo;re here, it&amp;rsquo;s probably because, like me, you&amp;rsquo;re interested in &lt;strong&gt;data science&lt;/strong&gt; and computer science. I&amp;rsquo;m currently in my final year of engineering school, specializing in &lt;strong&gt;applied mathematics and modeling&lt;/strong&gt;—fields that fuel my curiosity and my desire to understand the world around us.&lt;/p&gt;
+&lt;h2 id=&#34;why-this-blog&#34;&gt;Why this blog?&lt;/h2&gt;
+&lt;p&gt;This blog is a space where I share my &lt;strong&gt;personal projects&lt;/strong&gt; in data science and computer science. My goal is to create a place for learning and exchange, where I can share what I&amp;rsquo;ve learned while discovering new ideas with you. Whether you&amp;rsquo;re a beginner or an expert, I hope my experiences will inspire you and provide you with insights for your own projects.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

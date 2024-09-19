@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Article on NeuroFab</title>
+    <link>https://thibaultpav.github.io/Blog/fr/posts/</link>
+    <description>Recent content in Article on NeuroFab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Thu, 01 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thibaultpav.github.io/Blog/fr/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Les Concepts Clés du Reinforcement Learning : Ce Que Vous Devez Savoir</title>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/introduction_rl/</guid>
+      
+      <description>&lt;p&gt;&lt;strong&gt;🌍 Imaginez un monde où les machines apprennent à prendre des décisions, ajustant leurs stratégies au fil du temps pour atteindre des objectifs précis. Ce monde n&amp;rsquo;est plus une simple vision du futur, mais bien une réalité notamment grâce au Reinforcement Learning (RL).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Si vous êtes curieux de découvrir comment cette technologie fonctionne, vous êtes au bon endroit. Dans cet article, je vais vous expliquer de manière simple et claire les notions essentielles du RL, une technique d&amp;rsquo;intelligence artificielle qui permet aux machines d&amp;rsquo;apprendre par elles-mêmes, sans supervision.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Q-learning</title>
+      <link>https://thibaultpav.github.io/Blog/fr/posts/q_learning/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thibaultpav.github.io/Blog/fr/posts/q_learning/</guid>
+      
+      <description>&lt;p&gt;Maintenant que nous avons compris les bases des méthodes de différence temporelle (&lt;a href=&#34;https://thibaultpav.github.io/Blog/Blog/fr/posts/introduction_rl/&#34;&gt;introduction_Rl&lt;/a&gt;), passons à l&amp;rsquo;une des méthodes les plus connues en apprentissage par renforcement : le Q-learning. 😃&lt;/p&gt;
+&lt;p&gt;Pour bien comprendre son fonctionnement, nous allons d&amp;rsquo;abord introduire l&amp;rsquo;algorithme du Q-learning avant de le mettre en pratique dans un environnement de jeu vidéo appelé Frozen Lake. Les codes et exemples que nous utiliserons seront disponibles sur GitHub pour que vous puissiez les consulter et les essayer par vous-même.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

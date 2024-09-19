@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Q-learning | NeuroFab</title>
+<meta property="og:title" content="Q-learning | NeuroFab" />
+<meta name="twitter:title" content="Q-learning | NeuroFab" />
+<meta itemprop="name" content="Q-learning | NeuroFab" />
+<meta name="application-name" content="Q-learning | NeuroFab" />
+<meta property="og:site_name" content="NeuroFab" />
+
+<meta name="description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale">
+<meta itemprop="description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
+<meta property="og:description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
+<meta name="twitter:description" content="Un tema Hugo veloce e minimalista con supporto per la modalità chiara e scura, per la gestione di un sito o di un blog personale" />
+
+<meta property="og:locale" content="fr" />
+<meta name="language" content="fr" />
+
+  <link rel="alternate" hreflang="en" href="https://thibaultpav.github.io/Blog/en/posts/q_learning/" title="English" />
+
+  <link rel="alternate" hreflang="fr" href="https://thibaultpav.github.io/Blog/fr/posts/q_learning/" title="Français" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-08-01T00:00:00Z />
+    <meta property="article:published_time" content=2024-08-01T00:00:00Z />
+    <meta property="og:url" content="https://thibaultpav.github.io/Blog/fr/posts/q_learning/" />
+
+    
+    <meta property="og:article:author" content="Sidharth R" />
+    <meta property="article:author" content="Sidharth R" />
+    <meta name="author" content="Sidharth R" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Q-learning",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-08-01",
+        "description": "",
+        "wordCount":  2410 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-08-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "NeuroFab"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.134.2">
+
+    
+
+    <link rel="canonical" href="https://thibaultpav.github.io/Blog/fr/posts/q_learning/">
+    <link href="/Blog/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/Blog/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/Blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Blog/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/Blog/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/Blog/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://thibaultpav.github.io/Blog/site.webmanifest">
+
+<meta name="msapplication-config" content="/Blog/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/Blog/icons/favicon.svg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha512-fHwaWebuwA7NSF5Qg/af4UeDx9XqUpYpOGgubo3yWu+b2IQR4UeQwbb42Ti7gVAjNtVoI/I9TEoYeu9omwcC6g==" crossorigin="anonymous" crossorigin="anonymous" />
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha512-LQNxIMR5rXv7o+b1l8+N1EZMfhG7iFZ9HhnbJkTp4zjNr5Wvst75AqUeFDxeRUa7l5vEDyUiAip//r+EFLLCyA=="
+    crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha512-iWiuBS5nt6r60fCz26Nd0Zqe0nbk1ZTIQbl3Kv7kYsX+yKMUFHzjaH2+AnM6vp2Xs+gNmaBAVWJjSmuPw76Efg==" crossorigin="anonymous" onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+
+    </head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/Blog/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://thibaultpav.github.io/Blog/fr/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/Blog/fr/">
+                        Accueil
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/Blog/fr/posts/">
+                        Articles
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/Blog/fr/pages/about/">
+                        À Propos
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+                    <li>
+                        <select aria-label="Select Language" class="lang-list" id="select-language" onchange="location = this.value;">
+                            
+                            
+                            
+                                
+                                
+                                    
+                                        
+                                        
+                                            <option id="en" value="https://thibaultpav.github.io/Blog/en/posts/q_learning/">EN</option>
+                                        
+                                    
+                                
+                                    
+                                
+                            
+                                
+                                
+                                    
+                                
+                                    
+                                        
+                                        
+                                            <option id="fr" value="https://thibaultpav.github.io/Blog/fr/posts/q_learning/" selected>FR
+                                            </option>
+                                        
+                                    
+                                
+                            
+                        </select>                
+                    </li>
+                    <li class="menu-separator">
+                        <span>|</span>
+                    </li>
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Q-learning</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-08-01T00:00:00&#43;00:00" itemprop="datePublished"> 1 août 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b></b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#principes-de-base-et-fonctionnement-du-q-learning">Principes de Base et fonctionnement du Q-learning</a></li>
+    <li><a href="#algorithme-du-q-learning">Algorithme du Q-learning</a>
+      <ul>
+        <li><a href="#1-initialisation"><strong>1. Initialisation</strong></a></li>
+        <li><a href="#2-boucle-principale-dapprentissage"><strong>2. Boucle Principale d&rsquo;Apprentissage</strong></a></li>
+        <li><a href="#3-fin-de-lépisode-et-convergence"><strong>3. Fin de l&rsquo;Épisode et Convergence</strong></a></li>
+        <li><a href="#stratégies-dexploration-et-convergence"><strong>Stratégies d&rsquo;Exploration et Convergence</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#application-du-q-learning-à-frozen-lake">Application du Q-learning à Frozen Lake</a>
+      <ul>
+        <li><a href="#présentation-de-frozen-lake"><strong>Présentation de Frozen Lake</strong></a></li>
+        <li><a href="#implémentation-avec-q-learning"><strong>Implémentation avec Q-learning</strong></a>
+          <ul>
+            <li><a href="#1-classe-environment"><strong>1. Classe Environment</strong></a></li>
+            <li><a href="#2-classe-paramètre"><strong>2. Classe Paramètre</strong></a></li>
+            <li><a href="#3-classe-agent"><strong>3. Classe Agent</strong></a></li>
+            <li><a href="#4-entraînement-de-lagent"><strong>4. Entraînement de l&rsquo;Agent</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#analyse-des-résultats">Analyse des Résultats</a>
+      <ul>
+        <li><a href="#heatmap-des-trajectoires-privilégiées"><strong>Heatmap des Trajectoires Privilégiées</strong></a></li>
+        <li><a href="#nombre-de-pas-par-episode"><strong>Nombre de Pas par Episode</strong></a></li>
+        <li><a href="#récompense-cumulée-par-episode"><strong>Récompense Cumulée par Episode</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Maintenant que nous avons compris les bases des méthodes de différence temporelle (<a href="/Blog/fr/posts/introduction_rl/">introduction_Rl</a>), passons à l&rsquo;une des méthodes les plus connues en apprentissage par renforcement : le Q-learning. 😃</p>
+<p>Pour bien comprendre son fonctionnement, nous allons d&rsquo;abord introduire l&rsquo;algorithme du Q-learning avant de le mettre en pratique dans un environnement de jeu vidéo appelé Frozen Lake. Les codes et exemples que nous utiliserons seront disponibles sur GitHub pour que vous puissiez les consulter et les essayer par vous-même.</p>
+<h2 id="principes-de-base-et-fonctionnement-du-q-learning">Principes de Base et fonctionnement du Q-learning</h2>
+<p>Le Q-learning est une méthode d&rsquo;apprentissage par renforcement qui permet à un agent d&rsquo;apprendre à prendre des décisions optimales en interagissant avec son environnement, en estimant la qualité des actions dans des états donnés. Contrairement à d&rsquo;autres méthodes d&rsquo;apprentissage supervisé, le Q-learning ne nécessite pas de données pré-étiquetées. Au lieu de cela, l&rsquo;agent découvre la valeur de différentes actions en les testant, puis ajuste ses décisions en fonction des résultats obtenus.</p>
+<p>Au cœur du Q-learning se trouve la fonction de valeur Q. Cette fonction estime la qualité d&rsquo;une action dans un état donné, en termes de récompense cumulative attendue. 🚀</p>
+<p>En d&rsquo;autres termes, l&rsquo;algorithme met à jour la valeur de chaque action en tenant compte non seulement de la récompense immédiate obtenue, mais aussi de la valeur potentielle des actions futures. Cette approche permet à l&rsquo;agent de développer une stratégie qui non seulement maximise les récompenses immédiates, mais aussi optimise les gains à long terme.</p>
+<p>Le processus d&rsquo;apprentissage dans le Q-learning suit les étapes suivantes :</p>
+<ul>
+<li><strong>Initialisation</strong> : L&rsquo;agent démarre avec une fonction de valeur Q initialisée à des valeurs arbitraires pour commencer le processus d&rsquo;apprentissage.</li>
+<li><strong>Sélection de l&rsquo;Action</strong> : À chaque étape, l&rsquo;agent choisit une action en fonction de la fonction Q actuelle. Une stratégie courante est l&rsquo;ε-greedy, où l&rsquo;agent choisit l&rsquo;action avec la meilleure valeur Q la plupart du temps, mais explore de nouvelles actions avec une probabilité ε.</li>
+<li><strong>Exécution de l&rsquo;Action et Observation</strong> : L&rsquo;agent exécute l&rsquo;action, reçoit une récompense, et observe le nouvel état de l&rsquo;environnement.</li>
+<li><strong>Mise à Jour de la Valeur Q</strong> : L&rsquo;agent met à jour la valeur Q de l&rsquo;état-action précédent en utilisant l&rsquo;équation du Q-learning, prenant en compte la récompense immédiate et la valeur maximale des actions futures.</li>
+<li><strong>Répétition</strong> : Le processus se répète pour un nombre défini d&rsquo;itérations, permettant à l&rsquo;agent d&rsquo;améliorer progressivement sa stratégie. 😊</li>
+</ul>
+<p>Grâce à la mise à jour itérative de la fonction Q, le Q-learning tend à converger vers la politique optimale après un certain nombre de révisions. Cela signifie que, quel que soit l&rsquo;état initial, l&rsquo;agent apprend à prendre les décisions qui maximisent la récompense à long terme.</p>
+<h2 id="algorithme-du-q-learning">Algorithme du Q-learning</h2>
+<p>Voici une description détaillée de l&rsquo;algorithme :</p>
+<h3 id="1-initialisation"><strong>1. Initialisation</strong></h3>
+<p>L&rsquo;algorithme commence par initialiser une table de valeurs Q, appelée <strong>Q-table</strong>. Cette table associe chaque paire état-action à une valeur de Q, qui représente la qualité de l&rsquo;action pour cet état donné. Au début, ces valeurs peuvent être initialisées à zéro ou à des valeurs aléatoires. L&rsquo;agent n&rsquo;a aucune connaissance préalable de l&rsquo;environnement et doit donc découvrir la meilleure politique par l&rsquo;exploration.</p>
+<h3 id="2-boucle-principale-dapprentissage"><strong>2. Boucle Principale d&rsquo;Apprentissage</strong></h3>
+<p>L&rsquo;algorithme se déroule sur un certain nombre d&rsquo;<strong>épisodes</strong>, où chaque épisode représente une séquence complète d&rsquo;interactions entre l&rsquo;agent et l&rsquo;environnement, depuis un état initial jusqu&rsquo;à un état terminal.</p>
+<p>Pour chaque épisode :</p>
+<ol>
+<li>
+<p><strong>Sélection de l&rsquo;État Initial</strong> : L&rsquo;agent commence dans un état initial choisi soit de manière aléatoire, soit selon des règles spécifiques.</p>
+</li>
+<li>
+<p><strong>Boucle d&rsquo;Actions</strong> :</p>
+<ul>
+<li>
+<p><strong>Sélection de l&rsquo;Action</strong> : À chaque étape, l&rsquo;agent doit choisir une action à partir de l&rsquo;état actuel. Cette décision est guidée par une stratégie, souvent la stratégie <strong>ε-greedy</strong> :</p>
+<ul>
+<li>Avec une probabilité ε, l&rsquo;agent choisit une action aléatoire (exploration). 🤔</li>
+<li>Avec une probabilité 1-ε, l&rsquo;agent choisit l&rsquo;action ayant la valeur Q la plus élevée pour l&rsquo;état actuel (exploitation).</li>
+</ul>
+</li>
+<li>
+<p><strong>Exécution de l&rsquo;Action</strong> : L&rsquo;agent exécute l&rsquo;action choisie et observe la récompense obtenue ainsi que l&rsquo;état suivant dans lequel il se retrouve.</p>
+</li>
+<li>
+<p><strong>Mise à Jour de la Valeur Q</strong> : La valeur Q de la paire état-action précédente est mise à jour en utilisant l&rsquo;équation suivante :</p>
+</li>
+</ul>
+<p>$$
+Q(s, a) \leftarrow Q(s, a) + \alpha \left[ r + \gamma \cdot \max_{a&rsquo;} Q(s&rsquo;, a&rsquo;) - Q(s, a) \right]
+$$</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Où :</p>
+<ul>
+<li>$s$  est l&rsquo;état actuel.</li>
+<li>$a$  est l&rsquo;action choisie.</li>
+<li>$r$  est la récompense obtenue après avoir pris l&rsquo;action $a$.</li>
+<li>$s&rsquo;$  est l&rsquo;état suivant après l&rsquo;action $a$.</li>
+<li>$\alpha $ est le taux d&rsquo;apprentissage (learning rate), qui détermine à quel point les nouvelles informations mises à jour dans Q doivent remplacer l&rsquo;ancienne information.</li>
+<li>$ \gamma $ est le facteur d&rsquo;actualisation (discount factor), qui détermine l&rsquo;importance des récompenses futures par rapport aux récompenses immédiates.</li>
+<li>$ \max_{a&rsquo;} Q(s&rsquo;, a&rsquo;) $ représente la valeur Q maximale pour le meilleur choix d&rsquo;action possible dans l&rsquo;état $s&rsquo;$ à la prochaine étape.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transition vers le Nouvel État</strong> : L&rsquo;agent passe alors au nouvel état ( s&rsquo; ) et répète le processus jusqu&rsquo;à ce qu&rsquo;il atteigne un état terminal (fin de l&rsquo;épisode).</p>
+</li>
+</ul>
+<h3 id="3-fin-de-lépisode-et-convergence"><strong>3. Fin de l&rsquo;Épisode et Convergence</strong></h3>
+<p>Après un certain nombre d&rsquo;itérations (épisodes), les valeurs Q commencent à converger vers des valeurs stables, reflétant la politique optimale. L&rsquo;agent aura appris quelle action prendre dans chaque état pour maximiser les récompenses sur le long terme. 👍</p>
+<h3 id="stratégies-dexploration-et-convergence"><strong>Stratégies d&rsquo;Exploration et Convergence</strong></h3>
+<p>L&rsquo;algorithme de Q-learning repose sur un équilibre entre exploration (essayer de nouvelles actions pour découvrir leur valeur) et exploitation (utiliser les connaissances actuelles pour maximiser la récompense). L&rsquo;utilisation de la stratégie ε-greedy est courante, mais il existe d&rsquo;autres stratégies, comme l&rsquo;<strong>exploration par déclin de taux ε</strong>, où la probabilité ε diminue au fil du temps, permettant une exploration intensive au début puis une exploitation accrue à mesure que l&rsquo;agent apprend.</p>
+<p>En fin de compte, le Q-learning converge généralement vers une politique optimale, à condition que tous les états et actions soient suffisamment explorés, et que les valeurs Q soient correctement mises à jour.</p>
+<h2 id="application-du-q-learning-à-frozen-lake">Application du Q-learning à Frozen Lake</h2>
+<p>Pour illustrer le fonctionnement du Q-learning, nous allons l&rsquo;appliquer à un environnement de jeu simple appelé <em>Frozen Lake</em>. Cet environnement est couramment utilisé pour démontrer les concepts de l&rsquo;apprentissage par renforcement.</p>
+<h3 id="présentation-de-frozen-lake"><strong>Présentation de Frozen Lake</strong></h3>
+<p><em>Frozen Lake</em> est un jeu de plateau où un agent (représenté par un personnage) doit traverser un lac gelé pour atteindre un but, tout en évitant de tomber dans les trous cachés sous la glace. Le lac est représenté par une grille, où chaque case peut être :</p>
+<ul>
+<li><strong>S</strong> : la position de départ (Start).</li>
+<li><strong>F</strong> : une case de glace (Frozen).</li>
+<li><strong>H</strong> : un trou dans la glace (Hole), qui termine immédiatement le jeu si l&rsquo;agent y tombe.</li>
+<li><strong>G</strong> : l&rsquo;objectif (Goal), que l&rsquo;agent doit atteindre pour gagner.</li>
+</ul>
+<p>L&rsquo;agent peut se déplacer dans quatre directions : haut, bas, gauche et droite. Le but est d&rsquo;atteindre la case <em>G</em> en suivant le chemin le plus sûr, en évitant les trous. Cependant, le véritable défi réside dans la nature glissante de la glace. En effet, la glace est traîtresse : même si l&rsquo;agent choisit une direction, il n&rsquo;est pas garanti qu&rsquo;il s&rsquo;arrête immédiatement sur la case suivante. Au lieu de cela, l&rsquo;agent peut continuer à glisser dans la direction choisie, ce qui rend ses mouvements imprévisibles.</p>
+<p>Ce phénomène de glissade ajoute un aspect stochastique au jeu, où les actions de l&rsquo;agent ne produisent pas toujours les résultats escomptés. Cela signifie que même avec une stratégie optimale, l&rsquo;agent doit faire face à une certaine incertitude quant à l&rsquo;endroit exact où il atterrira après un mouvement. Par conséquent, l&rsquo;agent doit non seulement planifier ses actions en fonction des récompenses et des risques immédiats, mais aussi tenir compte de la probabilité que sa trajectoire dévie en raison de la glace glissante. 😬
+Pour plus de simplicité, dans cet article nous nous concentrerons sur un environnement non glissant.</p>
+<p><img alt="Jeu Frozen Lake" src="/Blog/fr/posts/q_learning/jeu.PNG"></p>
+<h3 id="implémentation-avec-q-learning"><strong>Implémentation avec Q-learning</strong></h3>
+<p>Pour implémenter le Q-learning dans cet environnement, nous avons structuré le code en deux classes principales : <strong>Agent</strong> et <strong>Environment</strong>. L&rsquo;environnement <em>Frozen Lake</em> a été récupéré à l&rsquo;aide de la bibliothèque <em>Gym</em>, qui est largement utilisée pour tester les algorithmes d&rsquo;apprentissage par renforcement.</p>
+<h4 id="1-classe-environment"><strong>1. Classe Environment</strong></h4>
+<p>La classe <strong>Environment</strong> encapsule les aspects de l&rsquo;environnement de <em>Frozen Lake</em> fourni par <em>Gym</em>. Elle gère les interactions entre l&rsquo;agent et l&rsquo;environnement, telles que :</p>
+<ul>
+<li>La réinitialisation de l&rsquo;environnement au début de chaque épisode.</li>
+<li>La gestion des actions de l&rsquo;agent (déplacements).</li>
+<li>L&rsquo;observation des nouveaux états après chaque action.</li>
+<li>Le calcul des récompenses en fonction de l&rsquo;état actuel de l&rsquo;agent.</li>
+</ul>
+<h4 id="2-classe-paramètre"><strong>2. Classe Paramètre</strong></h4>
+<p>La classe <strong>Paramètre</strong> est un élément central de l&rsquo;entraînement de l&rsquo;agent, regroupant tous les hyperparamètres essentiels qui influencent non seulement la vitesse de convergence, mais aussi la performance finale du modèle.</p>
+<ul>
+<li><strong>lr (Learning Rate)</strong> : Le taux d&rsquo;apprentissage détermine à quelle vitesse l&rsquo;agent met à jour ses connaissances.</li>
+<li><strong>gamma (Discount Factor)</strong> : Le facteur de discount influence l&rsquo;importance accordée aux récompenses futures. Un gamma élevé incite l&rsquo;agent à planifier sur le long terme, tandis qu&rsquo;un gamma plus faible privilégie les gains immédiats.</li>
+<li><strong>eps (Exploration Rate)</strong> : Le taux d&rsquo;exploration initial contrôle la la tendance de l&rsquo;agent à explorer de nouvelles actions.</li>
+<li><strong>eps_d (Decay Rate of Exploration)</strong> : Le facteur de décroissance réduit progressivement l&rsquo;exploration au fil du temps, favorisant l&rsquo;exploitation des connaissances acquises.</li>
+<li><strong>eps_min (Minimum Exploration Rate)</strong> : Ce paramètre garantit que l&rsquo;agent continue à explorer de nouvelles stratégies même en fin d&rsquo;entraînement, évitant ainsi le sur-apprentissage. 🎯</li>
+<li><strong>nb_ep (Number of Episodes)</strong> : Le nombre d&rsquo;épisodes d&rsquo;entraînement est crucial pour permettre à l&rsquo;agent d&rsquo;explorer suffisamment l&rsquo;environnement et d&rsquo;affiner sa politique.</li>
+<li><strong>is_slippery</strong> : Ce paramètre détermine si la surface du lac est glissante ou non, ajoutant ainsi une complexité supplémentaire au problème, ce qui peut nécessiter un ajustement des autres hyperparamètres.</li>
+<li><strong>map_name</strong> : Ce paramètre spécifie la taille du plateau (<em>par exemple</em> &ldquo;8x8&rdquo;), ce qui influence directement la complexité de l&rsquo;environnement que l&rsquo;agent doit maîtriser.</li>
+<li><strong>nb_run (Number of Runs)</strong> : Le nombre de runs permet de stabiliser les résultats en répétant l&rsquo;entraînement plusieurs fois. Cela aide à lisser les fluctuations aléatoires et à obtenir une Q-table plus fiable.</li>
+</ul>
+<h4 id="3-classe-agent"><strong>3. Classe Agent</strong></h4>
+<p>La classe <strong>Agent</strong> implémente l&rsquo;algorithme de Q-learning. Elle gère l&rsquo;apprentissage de l&rsquo;agent en interagissant avec l&rsquo;environnement, en prenant des décisions, en mettant à jour la Q-table, et en appliquant les stratégies d&rsquo;exploration et d&rsquo;exploitation. Les principales méthodes présentent dans cette classe permettent :</p>
+<ul>
+<li>La gestion de la <strong>Q-table</strong>, qui stocke les valeurs Q pour chaque paire état-action.</li>
+<li>La sélection des actions à chaque étape en utilisant la stratégie <strong>ε-greedy</strong>.</li>
+<li>La mise à jour de la Q-table après chaque action, en fonction des récompenses obtenues et des états suivants.</li>
+<li>L&rsquo;apprentissage à travers plusieurs épisodes pour converger vers la politique optimale.</li>
+</ul>
+<p>Voici un aperçu de la classe <strong>Agent</strong> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">QLearningAgent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_state</span><span class="p">,</span> <span class="n">n_action</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span><span class="n">eps_d</span><span class="p">,</span><span class="n">eps_min</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">n_action</span> <span class="o">=</span> <span class="n">n_action</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">n_state</span> <span class="o">=</span> <span class="n">n_state</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">q_table</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_state</span><span class="p">,</span> <span class="n">n_action</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">lr</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="n">eps</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">eps_d</span> <span class="o">=</span> <span class="n">eps_d</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">eps_min</span> <span class="o">=</span> <span class="n">eps_min</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">choose_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Choisit une action en utilisant la politique epsilon-greedy.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_action</span><span class="p">)</span>  <span class="c1"># Exploration</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="p">:])</span>  <span class="c1"># Exploitation</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">action</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Met à jour la Q-table en utilisant l&#39;équation de Q-learning.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">best_next_action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="p">[</span><span class="n">next_state</span><span class="p">,</span> <span class="p">:])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">td_target</span> <span class="o">=</span> <span class="n">reward</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">best_next_action</span>
+</span></span><span class="line"><span class="cl">        <span class="n">td_error</span> <span class="o">=</span> <span class="n">td_target</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="n">td_error</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">update_exploration_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Met à jour le taux d&#39;exploration (epsilon) pour favoriser l&#39;exploitation au fil du temps.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">eps_min</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">eps</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">eps_d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">exploit_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Choisit la meilleure action selon la Q-table (sans exploration).
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="p">[</span><span class="n">state</span><span class="p">,</span> <span class="p">:])</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">update_qtable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">qtable</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Met à jour la Q-table en fonction de la Q-table donnée en parametre (sert à moyenner les différents runs)
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">q_table</span><span class="o">=</span><span class="n">qtable</span>
+</span></span></code></pre></div><h4 id="4-entraînement-de-lagent"><strong>4. Entraînement de l&rsquo;Agent</strong></h4>
+<p>L&rsquo;entraînement de l&rsquo;agent consiste à le faire interagir avec l&rsquo;environnement à travers un grand nombre d&rsquo;épisodes. À chaque épisode, l&rsquo;agent explore les différentes options et améliore progressivement sa Q-table, jusqu&rsquo;à ce qu&rsquo;il trouve une stratégie stable et optimale pour traverser le lac sans tomber dans les trous.</p>
+<p>L&rsquo;agent utilise la classe <strong>Environment</strong> pour interagir avec <em>Frozen Lake</em> et applique l&rsquo;algorithme de Q-learning pour apprendre la politique optimale. Le processus d&rsquo;apprentissage se déroule comme suit :</p>
+<ul>
+<li>L&rsquo;agent commence dans un état initial aléatoire.</li>
+<li>Il choisit une action basée sur sa stratégie (ε-greedy).</li>
+<li>Il observe la récompense et l&rsquo;état suivant résultant de cette action.</li>
+<li>Il met à jour la Q-table en fonction de la récompense et des nouvelles informations obtenues.</li>
+<li>Ce processus se répète jusqu&rsquo;à ce que l&rsquo;agent atteigne un état terminal ou que l&rsquo;épisode se termine.</li>
+</ul>
+<p>Au fur et à mesure que l&rsquo;agent s&rsquo;entraîne, il devient de plus en plus compétent, trouvant le chemin optimal pour atteindre l&rsquo;objectif en évitant les trous.</p>
+<p>Pour améliorer encore les performances et la stabilité de la politique apprise, l&rsquo;entraînement est souvent réalisé sur plusieurs itérations appelées &ldquo;runs&rdquo;. Chaque itération correspond à une session d&rsquo;entraînement distincte où l&rsquo;agent repart de zéro, ce qui permet de réduire l&rsquo;aspect stochastique propre à chaque Q-table obtenue lors des différentes itérations. Après avoir effectué toutes les sessions d&rsquo;entraînement, les Q-tables obtenues sont moyennées. Cela permet de lisser les éventuelles fluctuations aléatoires et d&rsquo;obtenir une Q-table finale plus stable et fiable. 💪</p>
+<h2 id="analyse-des-résultats">Analyse des Résultats</h2>
+<p>Après l&rsquo;entraînement, il est crucial de comprendre comment l&rsquo;agent a performé et quelles stratégies il a adoptées. Voici une synthèse des résultats à travers trois visualisations clés.</p>
+<h3 id="heatmap-des-trajectoires-privilégiées"><strong>Heatmap des Trajectoires Privilégiées</strong></h3>
+<p>La <strong>heatmap</strong> montre les chemins préférés de l&rsquo;agent sur le plateau. Les zones où la couleur est plus intense révèlent les trajets que l&rsquo;agent considère comme les plus sûrs et efficaces pour atteindre l&rsquo;objectif, en évitant les trous.</p>
+<p><img alt="Heatmap des Trajectoires Privilégiées" src="/Blog/fr/posts/q_learning/jeu2.PNG"></p>
+<h3 id="nombre-de-pas-par-episode"><strong>Nombre de Pas par Episode</strong></h3>
+<p>Le graphique du <strong>nombre de pas par épisode</strong> illustre comment l&rsquo;efficacité de l&rsquo;agent s&rsquo;améliore avec le temps. Au début, il prend plus de pas pour atteindre l&rsquo;objectif, mais ce nombre diminue à mesure qu&rsquo;il apprend à optimiser ses mouvements. À la fin de l&rsquo;entraînement, le nombre de pas se stabilise, montrant que l&rsquo;agent a trouvé une stratégie quasi optimale. 😉</p>
+<h3 id="récompense-cumulée-par-episode"><strong>Récompense Cumulée par Episode</strong></h3>
+<p>Le graphique de la <strong>récompense cumulée</strong> met en évidence la progression de l&rsquo;agent. Au départ, les récompenses sont faibles, mais elles augmentent progressivement au fur et à mesure que l&rsquo;agent affine sa stratégie. Une fois que la courbe se stabilise, cela indique que l&rsquo;agent a convergé vers une politique stable et efficace, maximisant ainsi ses gains tout en minimisant les risques.</p>
+<p><img alt="Nombre de Pas et Récompense Cumulée par Episode" src="/Blog/fr/posts/q_learning/jeu3.png"></p>
+<p>En résumé, ces visualisations démontrent que l&rsquo;agent a appris à naviguer efficacement dans l&rsquo;environnement, optimisant son parcours pour maximiser les récompenses et atteindre son objectif de manière fiable.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/ThibaultPAV" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/thibault-pawlisz-b2084a262/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="mailto:pawlisz.thibault@gmail.com" target="_blank" rel="noopener noreferrer me"
+    title="Email">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sidharth R.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script src="https://thibaultpav.github.io/Blog/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+
+    
+
+</body>
+</html>
